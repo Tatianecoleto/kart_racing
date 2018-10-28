@@ -22,6 +22,12 @@ Para buildar o container, execute:
 ```bash
 docker-compose build
 ```
+
+Para instalar as gems, execute:
+```bash
+docker-compose run web bundle install
+```
+
 Para startar o projeto, execute:
 ```bash
 docker-compose up

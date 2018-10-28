@@ -9,6 +9,3 @@ RUN mkdir /kart_racing
 WORKDIR /kart_racing
 
 COPY . /kart_racing
-
-COPY Gemfile Gemfile.lock /kart_racing/
-RUN bundle install
