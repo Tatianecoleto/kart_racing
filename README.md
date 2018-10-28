@@ -1,11 +1,10 @@
 # Kart racing
 
-# Configurações necessárias:
+## Configurações necessárias:
 É necessário a instalação de docker e docker-compose.
 
 `Docker 18.06.1-ce`
 `docker-compose 1.22.0`
-
 ## Como executar a aplicação
 
 Clone este repositório:
@@ -23,7 +22,7 @@ Para buildar o container, execute:
 ```bash
 docker-compose build
 ```
-Para startar o projeto em background, execute:
+Para startar o projeto, execute:
 ```bash
 docker-compose up -d
 ```
