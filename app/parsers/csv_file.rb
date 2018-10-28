@@ -4,7 +4,7 @@ require 'time'
 
 class CsvFile
   class << self
-    def parser(file)
+    def import(file)
       CSV.foreach(file.path, headers: true) do |row|
         Info.call(find_racer(row), create_lap_racer(row))
       end

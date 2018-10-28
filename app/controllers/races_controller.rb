@@ -11,7 +11,7 @@ class RacesController < ApplicationController
     @race = Race.new(race_params)
 
     ActiveRecord::Base.transaction do
-      CsvFile.parser(params[:file])
+      CsvFile.import(params[:file])
       @race.save!
     end
 
