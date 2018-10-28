@@ -1,0 +1,3 @@
+- Arquivo csv para testes na raiz do projeto. (import_kart_racing.csv)
+
+- É necessário a instalação de docker e docker-compose para a execução do projeto.
