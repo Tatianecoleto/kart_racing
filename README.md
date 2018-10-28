@@ -1,24 +1,42 @@
-# README
+# Kart racing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Configurações necessárias:
+É necessário a instalação de docker e docker-compose.
 
-Things you may want to cover:
+`Docker 18.06.1-ce`
+`docker-compose 1.22.0`
 
-* Ruby version
+## Como executar a aplicação
 
-* System dependencies
+Clone este repositório:
 
-* Configuration
+```bash
+git clone https://github.com/Tatianecoleto/kart_racing.git
+```
 
-* Database creation
+Entre na pasta do projeto:
+```bash
+cd kart_racing
+```
 
-* Database initialization
+Para buildar o container, execute:
+```bash
+docker-compose build
+```
+Para startar o projeto em background, execute:
+```bash
+docker-compose up -d
+```
+Entre na url:
+`http://localhost:3000`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Logs
+Para visualizar os logs execute o comando:
+```bash
+docker-compose logs -f
+```
+## Tests
+Para rodar os testes execute o comando:
+```bash
+docker-compose run bundle exec rspec -fdoc
+```
