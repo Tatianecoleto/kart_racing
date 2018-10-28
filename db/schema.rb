@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2018_10_27_230242) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lap_racers", force: :cascade do |t|
     t.datetime "lap_time", null: false
     t.float "lap_duration", null: false
     t.float "lap_speed", null: false
-    t.integer "racer_id", null: false
-    t.integer "lap_id", null: false
+    t.bigint "racer_id", null: false
+    t.bigint "lap_id", null: false
     t.index ["lap_id"], name: "index_lap_racers_on_lap_id"
     t.index ["racer_id"], name: "index_lap_racers_on_racer_id"
   end
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_230242) do
     t.integer "number_laps"
     t.float "total_time"
     t.float "avg_speed"
-    t.integer "racer_id"
+    t.bigint "racer_id"
     t.index ["racer_id"], name: "index_race_infos_on_racer_id"
   end
 
@@ -45,4 +48,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_230242) do
     t.string "name", null: false
   end
 
+  add_foreign_key "lap_racers", "laps"
+  add_foreign_key "lap_racers", "racers"
 end
