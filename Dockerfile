@@ -10,6 +10,5 @@ WORKDIR /kart_racing
 
 COPY . /kart_racing
 
-COPY Gemfile Gemfile.lock ./
-RUN gem install bundler --pre
-RUN bundle install --binstubs
+COPY Gemfile Gemfile.lock /kart_racing/
+RUN bundle install
