@@ -1,0 +1,32 @@
+<h2>Corrida - <%= @race.name %></h2>
+
+<br> <br>
+
+<table>
+  <thead>
+    <th>Posição chegada</th>
+    <th>Código Piloto</th>
+    <th>Nome Piloto</th>
+    <th>Qtde Voltas Completadas</th>
+    <th>Tempo Total de Prova</th>
+    <th>Tempo melhor Volta</th>
+    <th>Velocidade Média</th>
+  </thead>
+  <tbody>
+    <% @race_infos.each.with_index(1) do |info, index| %>
+      <tr>
+        <th><%= index %></th>
+        <td><%= info.racer.code %></td>
+        <td><%= info.racer.name %></td>
+        <td><%= info.number_laps %></td>
+        <td><%= Time.at(info.total_time).utc.strftime("%H:%M:%S.%L") %></td>
+        <td><%= Time.at(info.time_best_lap).utc.strftime("%H:%M:%S.%L") %></td>
+            <td><%= info.avg_speed %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br> <br> <br>
+
+<h3> Melhor volta da corrida </h3> <%= raw Time.at(@best_lap).utc.strftime("%H:%M:%S.%L") %>

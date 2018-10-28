@@ -1,0 +1,9 @@
+<%= flash[:notice] %>
+<h4> Nome da Corrida:</h4>
+<%= form_tag races_path, multipart: true do %>
+  <%= text_field(:race, :name) %>
+  <br> <br> <br>
+  <h4> Upload csv:</h4>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Criar" %>
+<% end %>

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_190722) do
+ActiveRecord::Schema.define(version: 2018_10_27_230242) do
 
   create_table "lap_racers", force: :cascade do |t|
-    t.integer "number_lap", null: false
     t.datetime "lap_time", null: false
-    t.float "avg_speed", null: false
+    t.float "lap_duration", null: false
+    t.float "lap_speed", null: false
     t.integer "racer_id", null: false
     t.integer "lap_id", null: false
     t.index ["lap_id"], name: "index_lap_racers_on_lap_id"
@@ -24,8 +24,16 @@ ActiveRecord::Schema.define(version: 2018_10_27_190722) do
 
   create_table "laps", force: :cascade do |t|
     t.integer "lap_number", null: false
-    t.integer "race_id", null: false
-    t.index ["race_id"], name: "index_laps_on_race_id"
+  end
+
+  create_table "race_infos", force: :cascade do |t|
+    t.integer "best_lap"
+    t.float "time_best_lap"
+    t.integer "number_laps"
+    t.float "total_time"
+    t.float "avg_speed"
+    t.integer "racer_id"
+    t.index ["racer_id"], name: "index_race_infos_on_racer_id"
   end
 
   create_table "racers", force: :cascade do |t|
@@ -35,7 +43,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_190722) do
 
   create_table "races", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "best_lap"
   end
 
 end

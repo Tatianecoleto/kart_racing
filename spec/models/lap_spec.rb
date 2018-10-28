@@ -8,8 +8,4 @@ RSpec.describe Lap, type: :model do
       it { should validate_presence_of(:lap_number) }
     end
   end
-
-  describe 'associations' do
-    it { is_expected.to belong_to(:race) }
-  end
 end

@@ -5,9 +5,9 @@ require 'rails_helper'
 RSpec.describe LapRacer, type: :model do
   describe 'validations' do
     context 'when creating' do
+      it { should validate_presence_of(:lap_duration) }
       it { should validate_presence_of(:lap_time) }
-      it { should validate_presence_of(:number_lap) }
-      it { should validate_presence_of(:avg_speed) }
+      it { should validate_presence_of(:lap_speed) }
     end
   end
 

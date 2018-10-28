@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
+  root 'races#index'
 
-  resources :races do
-    get 'import', to: 'races#import'
-    collection { post :import}
-  end
-
-  root to: "races#index"
+  resources :races, only: [:index, :show, :create]
 end
