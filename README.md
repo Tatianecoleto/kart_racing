@@ -24,7 +24,7 @@ docker-compose build
 ```
 Para startar o projeto, execute:
 ```bash
-docker-compose up -d
+docker-compose up
 ```
 Entre na url:
 `http://localhost:3000`
@@ -37,5 +37,5 @@ docker-compose logs -f
 ## Tests
 Para rodar os testes execute o comando:
 ```bash
-docker-compose run bundle exec rspec -fdoc
+docker-compose run web bundle exec rspec -fdoc
 ```
