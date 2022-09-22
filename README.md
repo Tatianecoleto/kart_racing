@@ -1,4 +1,4 @@
-# Kart racing
+# Kaart racing
 A partir de um input de um arquivo csv( exemplo: [import_kart_racing.csv](https://drive.google.com/file/d/1Jo3M7t0juzwkgNb_r7S7YbWtjMrdWB0i/view?usp=sharing "import_kart_racing.csv") ), monta o resultado de uma corrida com as seguintes informações: Posição Chegada, Código Piloto, Nome Piloto, Qtde Voltas Completadas, Tempo Total de Prova, Tempo melhor Volta Piloto, Velocidade Média e Melhor volta da corrida.
 
 ## Configurações necessárias:
